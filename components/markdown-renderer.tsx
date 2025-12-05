@@ -4,6 +4,7 @@
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import type { PrismTheme } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface MarkdownRendererProps {
@@ -84,7 +85,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
 				)
 			}
 
-			const prismTheme = vscDarkPlus as unknown as Record<string, React.CSSProperties>
+			const prismTheme: PrismTheme = vscDarkPlus as PrismTheme
 
 			return match ? (
 				<div className="relative my-6">
