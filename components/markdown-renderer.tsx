@@ -90,7 +90,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
 						{match[1]}
 					</div>
 					<SyntaxHighlighter
-						style={vscDarkPlus}
+						style={vscDarkPlus as Record<string, React.CSSProperties>}
 						language={match[1]}
 						PreTag="div"
 						className="mt-0! mb-0! rounded-lg"
